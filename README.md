@@ -1,4 +1,4 @@
 # Swish
 Swish App Client (React + Redux)
 
-Backend: https://github/com/srosenshein/Swish-Api
+Backend: https://github.com/srosenshein/Swish-Api
