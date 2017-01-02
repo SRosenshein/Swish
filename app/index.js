@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 
 //Import components
-import Main from './components/Main';
+import App from './components/App';
 import Home from './components/Home';
 
 //Import react router deps
@@ -13,7 +13,7 @@ import store, { history } from './store';
 const router = (
 	<Provider store={store}>
 		<Router history={history}>
-			<Route path="/" component={Main}>
+			<Route path="/" component={App}>
 				<IndexRoute component={Home}></IndexRoute>
 			</Route>
 		</Router>

@@ -7,10 +7,10 @@ import rootReducer from './reducers/index';
 
 //import data (API-swish)
 
-/*const defaultState = {
-	users,
-	courts
-};*/
+const defaultState = {
+	//users,
+	//courts
+};
 
 const store = createStore(rootReducer, defaultState);
 
