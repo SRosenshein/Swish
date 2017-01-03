@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 //Import components
 import App from './components/App';
 import Home from './components/Home';
+import About from './components/About';
 
 //Import react router deps
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
@@ -15,6 +16,7 @@ const router = (
 		<Router history={history}>
 			<Route path="/" component={App}>
 				<IndexRoute component={Home}></IndexRoute>
+				<Route path="/about" component={About} />
 			</Route>
 		</Router>
 	</Provider>
