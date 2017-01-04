@@ -17,8 +17,8 @@ const router = (
 		<Router history={history}>
 			<Route path="/" component={App}>
 				<IndexRoute component={Home}></IndexRoute>
-				<Route path="/about" component={About} />
-				<Route path="/app" component={SwishContainer} />
+				<Route path="about" component={About} />
+				<Route path="app" component={SwishContainer} />
 			</Route>
 		</Router>
 	</Provider>

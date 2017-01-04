@@ -1,3 +1,24 @@
+export function courtRequest(courtId) {
+	return {
+		type: 'COURT_REQUEST',
+		courtId
+	}
+}
+
+export function courtSuccess(court) {
+	return {
+		type: 'COURT_SUCCESS',
+		court
+	}
+}
+
+export function courtFailure(error) {
+	return {
+		type: 'COURT_FAILURE',
+		error
+	}
+}
+
 // ADD_COURT
 
 // EDIT_COURT

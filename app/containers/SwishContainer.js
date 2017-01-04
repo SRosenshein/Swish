@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 // Import components
+import CourtContainer from './CourtContainer';
 
 const SwishContainer = React.createClass({
 	render() {
@@ -8,8 +9,10 @@ const SwishContainer = React.createClass({
 			//<Component 1 />
 			//<Component 2 />
 			//<Component 3 />
-			//<Component 4 />
-			<div>Main App Page</div>
+			<div>
+				<div>Main App Page</div>
+				<CourtContainer {...this.props}/>
+			</div>
 		)
 	}
 });

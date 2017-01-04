@@ -1,5 +1,14 @@
 function courts(state = [], action) {
-	console.log("courtreducer");
+	switch (action.type) {
+		case "COURT_SUCCESS":
+			return [...state, {
+				court: action.court
+			}];
+		case "COURT_FAILURE":
+			return state;
+		default:
+			return state;
+	}
 	return state;
 }
 
