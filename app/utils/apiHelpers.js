@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const base = "https://swish-api-srosenshein.c9users.io/api";
+//const headers = {headers: {"Access-Control-Allow-Origin": "*"}};
 
 function fetchCourtInfo(courtId) {
 	return axios.get(`${base}/courts/${courtId}`);

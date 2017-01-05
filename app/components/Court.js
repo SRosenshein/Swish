@@ -6,7 +6,7 @@ const Court = React.createClass({
 	handleSubmitCourt(e){
 		e.preventDefault();
 		const number = this.refs.courtNumber.value;
-		console.log(JSON.stringify(this.props.courtRequest(number)));
+		console.log(this.props.courtRequest(number));
 	},
 	render() {
 		return (
