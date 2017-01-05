@@ -5,21 +5,22 @@ import { browserHistory } from 'react-router';
 
 //Import the root reducer
 import rootReducer from './reducers/index';
-import mySaga from './sagas/sagas';
+import rootSaga from './sagas/index';
 
 const sagaMiddleware = createSagaMiddleware();
 
-//import data (API-swish)
+// import data 
+//import courts from './data/courts';
 
 const defaultState = {
 	//users,
-	//courts
+	courts: []
 };
 
 //const store = createStore(rootReducer, applyMiddleware(sagaMiddleware), defaultState);
 const store = compose(applyMiddleware(sagaMiddleware))(createStore)(rootReducer, defaultState);
-
-sagaMiddleware.run(mySaga);
+//const store = createStore(rootReducer, applyMiddleware(sagaMiddleware), defaultState);
+sagaMiddleware.run(rootSaga);
 
 export const history = syncHistoryWithStore(browserHistory, store);
 
