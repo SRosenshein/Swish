@@ -7,7 +7,7 @@ import SearchContainer from './SearchContainer';
 
 const SwishContainer = React.createClass({
 	componentDidMount() {
-		this.props
+		this.props.fetchAllCourts()
 	},
 	render() {
 		return (

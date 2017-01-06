@@ -1,26 +1,29 @@
+//fetch all courts
 export function fetchAllCourts() {
-	type: 'FETCH_ALL_COURTS_REQUEST'
+	return {
+		type: 'FETCH_ALL_COURTS_REQUEST'
+	}
 }
-
 export function fetchAllCourtsSuccess(courts) {
-	type: 'FETCH_ALL_COURTS_SUCCESS',
-	courts
+	return {
+		type: 'FETCH_ALL_COURTS_SUCCESS',
+		courts
+	}
 }
 
+//fetch one court by court_id
 export function courtRequest(courtId) {
 	return {
 		type: 'COURT_REQUEST',
 		courtId
 	}
 }
-
 export function courtSuccess(court) {
 	return {
 		type: 'COURT_SUCCESS',
 		court
 	}
 }
-
 export function courtFailure(error) {
 	return {
 		type: 'COURT_FAILURE',
@@ -28,6 +31,7 @@ export function courtFailure(error) {
 	}
 }
 
+//search courts by zip code and distance
 export function searchCourtsRequest(zipCode,  distance){
 	return {
 		type: 'SEARCH_COURTS_REQUEST',
@@ -35,14 +39,12 @@ export function searchCourtsRequest(zipCode,  distance){
 		distance
 	}
 }
-
 export function searchCourtsSuccess(courts) {
 	return {
 		type: 'SEARCH_COURTS_SUCCESS',
 		courts
 	}
 }
-
 export function searchCourtsFailure(error) {
 	return {
 		type: 'SEARCH_COURTS_FAILURE',
@@ -50,6 +52,7 @@ export function searchCourtsFailure(error) {
 	}
 }
 
+// add new court
 export function addCourt(name, desc, status, address) {
 	return {
 		type: 'ADD_COURT',
@@ -59,9 +62,6 @@ export function addCourt(name, desc, status, address) {
 		address
 	}
 }
-
-// ADD_COURT
-
 // EDIT_COURT
 
 // FAVORITE_COURT

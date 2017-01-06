@@ -9,17 +9,8 @@ import rootSaga from './sagas/index';
 
 const sagaMiddleware = createSagaMiddleware();
 
-// import data 
-//import courts from './data/courts';
-
-const defaultState = {
-	//users,
-	courts: []
-};
-
-//const store = createStore(rootReducer, applyMiddleware(sagaMiddleware), defaultState);
-const store = compose(applyMiddleware(sagaMiddleware))(createStore)(rootReducer, defaultState);
-//const store = createStore(rootReducer, applyMiddleware(sagaMiddleware), defaultState);
+//const store = compose(applyMiddleware(sagaMiddleware))(createStore)(rootReducer, defaultState);
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(rootSaga);
 
 export const history = syncHistoryWithStore(browserHistory, store);
