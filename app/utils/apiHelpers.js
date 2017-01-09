@@ -16,7 +16,7 @@ function searchCourts(zipCode, distance) {
 
 const helpers = {
 	//a bunch of functions to make api requests
-	fetchCourt: fetchCourtInfo,
+	fetchCourtInfo,
 	fetchAllCourts,
 	searchCourts
 };

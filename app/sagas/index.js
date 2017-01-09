@@ -15,7 +15,7 @@ export function* fetchAllCourts(action) {
 }
 export function* requestCourt(action) {
 	try {
-		const court = yield call(Api.fetchCourt, action.courtId);
+		const court = yield call(Api.fetchCourtInfo, action.courtId);
 		yield put(actions.courtSuccess(court));
 	} catch (e) {
 		yield put(actions.courtFailure(e.message));

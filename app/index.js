@@ -5,7 +5,7 @@ import { render } from 'react-dom';
 import App from './components/App';
 import Home from './components/Home';
 import About from './components/About';
-import SwishContainer from './containers/SwishContainer';
+import SwishContainer from './components/SwishContainer';
 
 //Import react router deps
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
@@ -18,7 +18,7 @@ const router = (
 			<Route path="/" component={App}>
 				<IndexRoute component={Home}></IndexRoute>
 				<Route path="about" component={About} />
-				<Route path="app" component={SwishContainer} />
+				<Route path="swish" component={SwishContainer} />
 			</Route>
 		</Router>
 	</Provider>

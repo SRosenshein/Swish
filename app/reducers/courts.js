@@ -1,23 +1,17 @@
 import initialState from './initialState';
 
-function courts(state = initialState.courts, action) {
+function courts(state = initialState, action) {
 	console.log(action.type);
 	switch (action.type) {
 		case "FETCH_ALL_COURTS_SUCCESS":
-			console.log(state, action)
-			return [
-				...state, action.courts
-			]
+			Object.assign(state.courts, action.courts.data);
+			return state;
 		case "COURT_SUCCESS": //by court_id
-			// should only return individual court data?
-			console.log(state, action)
-			return [
-				...state,
-				action.court.data
-			];
+			state.currentCourt = action.court.data.id;
+			return state;
 		case "COURT_FAILURE":
 			return [
-				...state, action.error
+				state, action.error
 			];
 		// case "ADD_COURT":
 		// 	return [
@@ -25,10 +19,8 @@ function courts(state = initialState.courts, action) {
 		// 		action.court.data
 		// 	]
 		case "SEARCH_COURTS_SUCCESS": //by zip + distance
-			console.log(state, action)
-			return [
-
-			];
+			state.results = action.courts.data;
+			return state;
 		default:
 			return state;
 	}

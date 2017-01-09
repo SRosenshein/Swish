@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router';
 // Import components
 
-const SearchContainer = React.createClass({
+const Search = React.createClass({
 	handleSubmitSearch(e) {
 		e.preventDefault();
 		const zipCode = this.refs.zipCode.value;
@@ -19,8 +20,8 @@ const SearchContainer = React.createClass({
 					<input type="submit" hidden />
 				</form>
 			</div>
-		)
+		);
 	}
 });
 
-export default SearchContainer;
+export default Search;

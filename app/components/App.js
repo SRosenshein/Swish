@@ -6,7 +6,7 @@ import Main from './Main';
 function mapStateToProps(state) {
 	return {
 		//users: state.users,
-		courts: state.courts
+		state: state.courts
 	}
 }
 
