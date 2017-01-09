@@ -6,7 +6,7 @@ const CourtMap = React.createClass({
 	render() {
 		return (
 			<div>
-				IHDABVOIFSVB
+				IHDAIHBIEHFBBVOIFSVB
 			</div>
 		)
 	}
