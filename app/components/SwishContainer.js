@@ -10,25 +10,11 @@ const SwishContainer = React.createClass({
 		this.props.fetchAllCourts();
 	},
 	render() {
-		const center = {
-			lat: 40.7829,
-			lng: -73.9654
-		};
-
-		const markers = [
-			{
-				location: {
-					lat: 40.7829,
-					lng: -73.9654
-				}
-			}
-		]
-
 		return (
 			<div className="col-sm-12 text-center">
 				<h1>Main App Page</h1>
 				<div className="mapContainer" style={styles.mapContainer}>
-					<Map center={center} markers={markers} {...this.props} />
+					<Map {...this.props} />
 				</div>
 				<Search {...this.props} />
 			</div>

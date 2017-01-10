@@ -1,4 +1,5 @@
 import axios from 'axios';
+const GAPIKey = "AIzaSyA4sh6nrnUQGv3otRzx5DEV42ehbfGzCb8";
 
 const base = "https://swish-api-srosenshein.c9users.io/api";
 

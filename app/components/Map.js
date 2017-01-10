@@ -1,39 +1,56 @@
-import React from 'react';
-import { GoogleMapLoader, GoogleMap, Marker } from 'react-google-maps';
+import React, {Component} from 'react';
+import { GoogleMapLoader, GoogleMap, Marker, withGoogleMap } from 'react-google-maps';
 
-const Map = React.createClass({
+class Map extends Component {
 	render() {
 		const mapContainer = <div style={{height: '100%', width: '100%'}}></div>
 
-		const markers = this.props.markers.map((court, i) => {
-			const marker = {
-				position: {
-					lat: court.location.lat,
-					lng: court.location.lng
-				}
-			}
+		// const markers = this.props.state.courts.map((court, i) => {
+		// 	const marker = {
+		// 		position: {
+		// 			lat: court.latitude,
+		// 			lng: court.longitude
+		// 		}
+		// 	}
+		// 	return <Marker key={court.id} {...marker} />
+		// });
 
-			return <Marker key={i} {...marker} />
- 		})
+		const MyGoogleMap = withGoogleMap(props => (
+			<GoogleMap
+				defaultZoom={15}
+				defaultCenter={{lat: 40.7829, lng: -73.9654}}
+				options={{streetViewControl: false, mapTypeControl: false}}>
+				{props.markers.map(marker => (
+					<Marker key={marker.id} {...marker} position={{lat: marker.latitude, lng: marker.longitude}} defaultAnimation={2}/> 
+				))}
+			</GoogleMap>
+		));
+
+		// const markers = {
+		// 	position: {
+		// 		lat: 40.7829,
+		// 		lng: -73.9654
+		// 	}
+		// };
 
 		return (
-			<GoogleMapLoader
+			<MyGoogleMap
 				containerElement={ mapContainer }
-				googleMapElement={
-					<GoogleMap
-						defaultZoom={15}
-						defaultCenter={this.props.center}
-						options={{streetViewControl: false, mapTypeControl: false}}>
-						{ markers }
-					</GoogleMap>
-				} />
+				markers={this.props.state.courts}
+				mapElement={
+         <div style={{ height: '100%' }} />
+         }
+				// googleMapElement={
+				// 	<GoogleMap
+				// 		defaultZoom={15}
+				// 		defaultCenter={{lat: 40.7829, lng: -73.9654}}
+				// 		options={{streetViewControl: false, mapTypeControl: false}}>
+				// 		{markers}
+				// 	</GoogleMap>
+				// } 
+			/>
 		)
 	}
-});
-
-Map.propTypes = {
-	center: React.PropTypes.object,
-	markers: React.PropTypes.array
 }
 
 export default Map;

@@ -12,12 +12,14 @@ const Search = React.createClass({
 	render() {
 		return (
 			<div>
-				<form ref="searchForm" className="search-form" onSubmit={this.handleSubmitSearch}>
-					Zip:
-					<input type="text" ref="zipCode" />
-					Distance: 
-					<input type="text" ref="distance" />
-					<input type="submit" hidden />
+				<form ref="searchForm" onSubmit={this.handleSubmitSearch}>
+					<div className="form-group">
+						Zip:
+						<input type="text" className="form-control" ref="zipCode" />
+						Distance: 
+						<input type="text" className="form-control" ref="distance" />
+						<input type="submit" hidden />
+					</div>
 				</form>
 			</div>
 		);
