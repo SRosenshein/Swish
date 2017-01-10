@@ -2,23 +2,35 @@ import React from 'react';
 import { Link } from 'react-router';
 import { styles } from '../styles/courtpage';
 // Import components
-import CourtMap from './CourtMap';
 import Search from './Search';
+import Map from './Map';
 
 const SwishContainer = React.createClass({
 	componentDidMount() {
 		this.props.fetchAllCourts();
 	},
 	render() {
+		const center = {
+			lat: 40.7829,
+			lng: -73.9654
+		};
+
+		const markers = [
+			{
+				location: {
+					lat: 40.7829,
+					lng: -73.9654
+				}
+			}
+		]
+
 		return (
 			<div className="col-sm-12 text-center">
 				<h1>Main App Page</h1>
-				<div className="col-sm-4" style={styles.left}>
-					<Search {...this.props} />
+				<div className="mapContainer" style={styles.mapContainer}>
+					<Map center={center} markers={markers} {...this.props} />
 				</div>
-				<div className="col-sm-8" style={styles.right}>
-					<CourtMap {...this.props} />
-				</div>
+				<Search {...this.props} />
 			</div>
 		)
 	}
