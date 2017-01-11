@@ -3,6 +3,9 @@ import { Link } from 'react-router';
 import { styles } from '../styles/homepage';
 
 const Main = React.createClass ({
+	componentDidMount() {
+		this.props.fetchAllCourts();
+	},
 	render() {
 		return (
 			<div className='main-container'>

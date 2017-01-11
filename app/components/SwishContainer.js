@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router';
 import { styles } from '../styles/courtpage';
 // Import components
@@ -6,9 +6,6 @@ import Search from './Search';
 import Map from './Map';
 
 const SwishContainer = React.createClass({
-	componentDidMount() {
-		this.props.fetchAllCourts();
-	},
 	render() {
 		return (
 			<div className="col-sm-12 text-center">
