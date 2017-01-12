@@ -1,5 +1,6 @@
 import React from 'react';
 import { GoogleMap, Marker, withGoogleMap, InfoWindow } from 'react-google-maps';
+import { Link } from 'react-router';
 
 const Map = React.createClass({
 	handleMarkerClick(targetMarker) {
@@ -14,9 +15,8 @@ const Map = React.createClass({
 		const center = {lat: 40.7829, lng: -73.9654};
 		const image = {
 			url: require('../utils/bballPic.png'),
-			scaledSize: new google.maps.Size(24, 24)
+			scaledSize: new google.maps.Size(20, 20)
 		};
-		console.log(this.props.courts);
 
 		const SwishGoogleMap = withGoogleMap(props => (
 			<GoogleMap
@@ -26,8 +26,8 @@ const Map = React.createClass({
 				{...this.props}>
 				{props.markers.map(marker => (
 					<Marker key={marker.id} {...marker} 
-						onClick={() => marker = props.onMarkerClick(marker)} 
-						position={{lat: marker.latitude, lng: marker.longitude}} 
+						onClick={() => props.onMarkerClick(marker)} 
+						position={{lat: parseFloat(marker.latitude), lng: parseFloat(marker.longitude)}} 
 						defaultAnimation={2}
 						title={marker.name}
 						icon={image} 
@@ -36,7 +36,9 @@ const Map = React.createClass({
 						{(this.props.courts.currentCourt === marker.id) && (
 							<InfoWindow onCloseClick={() => props.onMarkerClose(marker)}>
 								<div>
-									{marker.name}<br/>
+									<Link to={`/view/${marker.id}`}>
+										{marker.name}<br/>
+									</Link>
 									Status: {marker.address}
 								</div>
 							</InfoWindow>

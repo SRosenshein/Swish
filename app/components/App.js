@@ -4,8 +4,6 @@ import * as actionCreators from '../actions/actionCreators';
 import Main from './Main';
 
 function mapStateToProps(state) {
-	console.log(state);
-
 	return {
 		//users: state.users,
 		courts: state.courts
