@@ -13,14 +13,14 @@ export function* fetchAllCourts(action) {
 		yield put({type: 'FETCH_ALL_COURTS_FAILURE', message: e.message});
 	}
 }
-export function* requestCourt(action) {
-	try {
-		const court = yield call(Api.fetchCourtInfo, action.courtId);
-		yield put(actions.courtSuccess(court));
-	} catch (e) {
-		yield put(actions.courtFailure(e.message));
-	}
-}
+// export function* requestCourt(action) {
+// 	try {
+// 		const court = yield call(Api.fetchCourtInfo, action.courtId);
+// 		yield put(actions.courtSuccess(court));
+// 	} catch (e) {
+// 		yield put(actions.courtFailure(e.message));
+// 	}
+// }
 export function* searchCourts(action) {
 	try {
 		const courts = yield call(Api.searchCourts, action.zipCode, action.distance);
@@ -35,9 +35,9 @@ export function* searchCourts(action) {
 export function* watchFetchCourts() {
 	yield takeLatest("FETCH_ALL_COURTS_REQUEST", fetchAllCourts)
 }
-export function* watchCourtRequest() {
-	yield takeEvery("COURT_REQUEST", requestCourt);
-}
+// export function* watchCourtRequest() {
+// 	yield takeEvery("COURT_REQUEST", requestCourt);
+// }
 export function* watchSearchRequest() {
 	yield takeEvery("SEARCH_COURTS_REQUEST", searchCourts);
 }
@@ -45,7 +45,7 @@ export function* watchSearchRequest() {
 function* rootSaga() {
 	yield [
 		fork(watchFetchCourts),
-		fork(watchCourtRequest),
+		// fork(watchCourtRequest),
 		fork(watchSearchRequest)
 	]
 }

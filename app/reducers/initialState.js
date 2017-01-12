@@ -1,5 +1,7 @@
 export default {
-	currentCourt: null,
-	courts: []
+	courts: {
+		courts: [],
+		currentCourt: -1
+	}
 	//,users: []
 }

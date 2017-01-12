@@ -8,12 +8,14 @@ import Map from './Map';
 const SwishContainer = React.createClass({
 	render() {
 		return (
-			<div className="col-sm-12 text-center">
+			<div className="row text-center">
 				<h1>Main App Page</h1>
-				<div className="mapContainer" style={styles.mapContainer}>
+				<div className="col-lg-8" style={styles.mapContainer}>
 					<Map {...this.props} />
 				</div>
-				<Search {...this.props} />
+				<div className="col-lg-4" >
+					<Search {...this.props} />
+				</div>
 			</div>
 		)
 	}

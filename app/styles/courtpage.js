@@ -6,9 +6,10 @@ export const styles = {
 		float: "left"
 	},
 	mapContainer: {
-		height: 400,
-		width: 800,
-		margin: "0 auto",
-		padding: 10
+		height: 600,
+		width: 700,
+		padding: 15,
+		position: "relative",
+		marginLeft: 75
 	}
 };

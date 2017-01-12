@@ -18,18 +18,18 @@ export function courtRequest(courtId) {
 		courtId
 	}
 }
-export function courtSuccess(court) {
-	return {
-		type: 'COURT_SUCCESS',
-		court
-	}
-}
-export function courtFailure(error) {
-	return {
-		type: 'COURT_FAILURE',
-		error
-	}
-}
+// export function courtSuccess(court) {
+// 	return {
+// 		type: 'COURT_SUCCESS',
+// 		court
+// 	}
+// }
+// export function courtFailure(error) {
+// 	return {
+// 		type: 'COURT_FAILURE',
+// 		error
+// 	}
+// }
 
 //search courts by zip code and distance
 export function searchCourtsRequest(zipCode,  distance){

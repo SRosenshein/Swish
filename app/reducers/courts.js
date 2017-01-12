@@ -1,18 +1,17 @@
 import initialState from './initialState';
 
-function courts(state = initialState, action) {
+function courts(state = initialState.courts, action) {
 	console.log(action.type);
 	switch (action.type) {
 		case "FETCH_ALL_COURTS_SUCCESS":
 			Object.assign(state.courts, action.courts.data);
 			return state;
-		case "COURT_SUCCESS": //by court_id
-			state.currentCourt = action.court.data.id;
-			return state;
-		case "COURT_FAILURE":
-			return [
-				state, action.error
-			];
+		case "COURT_REQUEST": //by court_id
+			return Object.assign({}, state, {currentCourt: action.courtId});
+		// case "COURT_FAILURE":
+		// 	return [
+		// 		state, action.error
+		// 	];
 		// case "ADD_COURT":
 		// 	return [
 		// 		...state,
