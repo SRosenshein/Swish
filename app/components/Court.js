@@ -5,7 +5,7 @@ const Court = React.createClass({
 	render() {
 		return (
 			<div>
-				COURT PAGE AHHHH
+				{this.props.courts.currentCourt}
 			</div>
 		)
 	}

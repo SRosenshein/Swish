@@ -7,8 +7,7 @@ const Map = React.createClass({
 		this.props.courtRequest(targetMarker.id);
 	},
 	handleMarkerClose(targetMarker) {
-		targetMarker.showInfo = false;
-		return targetMarker;
+	
 	},
 	render() {
 		const mapContainer = <div style={{height: '100%', width: '100%'}}></div>
@@ -33,16 +32,18 @@ const Map = React.createClass({
 						icon={image} 
 						{...this.props}
 					>
-						{(this.props.courts.currentCourt === marker.id) && (
-							<InfoWindow onCloseClick={() => props.onMarkerClose(marker)}>
+						{this.props.courts.currentCourt === marker.id && (
+							<InfoWindow 
+								onCloseClick={() => props.onMarkerClose(marker)}
+							>
 								<div>
 									<Link to={`/view/${marker.id}`}>
 										{marker.name}<br/>
 									</Link>
-									Status: {marker.address}
+									Status: {marker.status}
 								</div>
 							</InfoWindow>
-						)}	
+						)}
 					</Marker> 
 				))}
 			</GoogleMap>
