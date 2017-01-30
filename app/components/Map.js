@@ -1,8 +1,13 @@
 import React from 'react';
 import { GoogleMap, Marker, withGoogleMap, InfoWindow } from 'react-google-maps';
 import { Link } from 'react-router';
+import css from '../styles/style.css';
+import Spinner from 'react-spinkit';
 
 const Map = React.createClass({
+	componentWillMount() {
+		this.props.fetchAllCourts();
+	},
 	handleMarkerClick(targetMarker) {
 		this.props.courtRequest(targetMarker.id);
 	},
@@ -13,7 +18,7 @@ const Map = React.createClass({
 		const mapContainer = <div style={{height: '100%', width: '100%'}}></div>
 		const center = {lat: 40.7829, lng: -73.9654};
 		const image = {
-			url: require('../utils/bballPic.png'),
+			url: require('../utils/img/bballPic.png'),
 			scaledSize: new google.maps.Size(20, 20)
 		};
 
@@ -48,6 +53,10 @@ const Map = React.createClass({
 				))}
 			</GoogleMap>
 		));
+
+		if (this.props.courts.courts.length < 1) {
+			return <Spinner spinnerName="wandering-cubes" />;
+		}
 
 		return (
 			<SwishGoogleMap
