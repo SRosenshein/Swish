@@ -4,7 +4,7 @@ function courts(state = initialState.courts, action) {
 	console.log(action.type);
 	switch (action.type) {
 		case "FETCH_ALL_COURTS_SUCCESS":
-			Object.assign(state.courts, action.courts.data);
+			Object.assign(state.courtsList, action.courts.data);
 			return state;
 		case "COURT_REQUEST": //by court_id
 			return Object.assign({}, state, {currentCourt: action.courtId});

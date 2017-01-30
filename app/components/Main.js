@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { styles } from '../styles/homepage';
 
-const Main = React.createClass ({
+class Main extends Component {
 	render() {
 		return (
 			<div className='main-container'>
@@ -26,8 +26,8 @@ const Main = React.createClass ({
 				</div>
 				{React.cloneElement(this.props.children, this.props)}
 			</div>
-		)
+		);
 	}
-});
+}
 
 export default Main;				

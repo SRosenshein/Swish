@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { styles } from '../styles/homepage';
 
-const Home = React.createClass ({
+class Home extends Component {
 	render() {
 		return (
 			<div className="jumbotron col-sm-12 text-center" style={styles.welcome}>
@@ -12,6 +12,6 @@ const Home = React.createClass ({
 			</div>
 		)
 	}
-});
+}
 
 export default Home;

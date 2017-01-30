@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 // Import components
 
-const Search = React.createClass({
+class Search extends Component {
 	handleSubmitSearch(e) {
 		e.preventDefault();
 		const zipCode = this.refs.zipCode.value;
 		const distance = this.refs.distance.value;
 		this.props.searchCourtsRequest(zipCode, distance);
-	},
+	}
 	render() {
 		return (
 			<div>
@@ -24,6 +24,6 @@ const Search = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
 export default Search;

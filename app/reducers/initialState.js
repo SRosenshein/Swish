@@ -1,6 +1,6 @@
 export default {
 	courts: {
-		courts: [],
+		courtsList: [],
 		currentCourt: -1
 	}
 	//,users: []

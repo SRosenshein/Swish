@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { styles } from '../styles/courtpage';
 // Import components
 import Search from './Search';
 import Map from './Map';
 
-const SwishContainer = React.createClass({
+class SwishContainer extends Component {
 	render() {
 		return (
 			<div className="row text-center">
@@ -19,6 +19,6 @@ const SwishContainer = React.createClass({
 			</div>
 		)
 	}
-});
+}
 
 export default SwishContainer;

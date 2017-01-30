@@ -1,0 +1,16 @@
+html {
+	height: 100%;
+	font-size: 100%;
+}
+
+body {
+	min-height: 100%
+}
+
+.map-container {
+	height: 600;
+	width: 700;
+	padding: 15;
+	position: relative;
+	margin-left: 75;
+}

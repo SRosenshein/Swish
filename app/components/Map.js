@@ -54,14 +54,14 @@ const Map = React.createClass({
 			</GoogleMap>
 		));
 
-		if (this.props.courts.courts.length < 1) {
+		if (this.props.courts.courtsList.length < 1) {
 			return <Spinner spinnerName="wandering-cubes" />;
 		}
 
 		return (
 			<SwishGoogleMap
 				containerElement={ mapContainer }
-				markers={this.props.courts.courts}
+				markers={this.props.courts.courtsList}
 				center={center}
 				onMarkerClick={this.handleMarkerClick}
 				onMarkerClose={this.handleMarkerClose}
